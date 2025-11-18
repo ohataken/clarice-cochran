@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "clarice_cochran"
+
+system('osascript -e \'display notification "セッションが終了しました" with title "Claude Code" subtitle "処理終了" sound name "Hero"\'')
