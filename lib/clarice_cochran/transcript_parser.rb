@@ -9,5 +9,9 @@ module ClariceCochran
     def timestamp
       @timestamp ||= Time.new(@json["timestamp"] || 0)
     end
+
+    def message
+      @json["message"]
+    end
   end
 end

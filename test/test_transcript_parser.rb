@@ -14,4 +14,10 @@ class TestTranscriptParser < Minitest::Test
     parser = ClariceCochran::TranscriptParser.new(json)
     assert(parser.timestamp.is_a?(Time))
   end
+
+  def test_message
+    json = JSON.parse('{ "message": { "content": [] } }')
+    parser = ClariceCochran::TranscriptParser.new(json)
+    assert(parser.message.key?("content"))
+  end
 end
