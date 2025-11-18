@@ -2,5 +2,6 @@
 
 require "clarice_cochran"
 
-builder = ClariceCochran::SessionStartHookCommandBuilder.new
+data = JSON.parse($stdin.read)
+builder = ClariceCochran::SessionStartHookCommandBuilder.new(data)
 system(builder.to_osascript)
