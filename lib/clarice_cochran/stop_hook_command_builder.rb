@@ -2,12 +2,14 @@
 
 module ClariceCochran
   class StopHookCommandBuilder
+    include DataParsingMethods
+
     def initialize(data)
       @data = data
     end
 
     def to_osascript
-      'osascript -e \'display notification "処理が停止しました" with title "Claude Code" subtitle "停止完了" sound name "Hero"\''
+      "osascript -e 'display notification \"#{message}\" with title \"Claude Code\" subtitle \"停止完了\" sound name \"Hero\"'"
     end
   end
 end
