@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ClariceCochran
-  class SessionStartHookCommandBuilder
+  class SessionStartHookCommandBuilder < BaseBuilder
     include DataParsingMethods
 
     def initialize(data)

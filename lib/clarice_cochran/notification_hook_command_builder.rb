@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ClariceCochran
-  class NotificationHookCommandBuilder
+  class NotificationHookCommandBuilder < BaseBuilder
     include DataParsingMethods
 
     def initialize(data)
