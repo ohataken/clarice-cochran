@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "clarice_cochran/version"
+require_relative "clarice_cochran/session_start_hook_command_builder"
 
 module ClariceCochran
   class Error < StandardError; end
