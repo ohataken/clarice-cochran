@@ -2,4 +2,5 @@
 
 require "clarice_cochran"
 
-system('osascript -e \'display notification "セッションが開始されました" with title "Claude Code" subtitle "処理開始" sound name "Hero"\'')
+builder = ClariceCochran::SessionStartHookCommandBuilder.new
+system(builder.to_osascript)
