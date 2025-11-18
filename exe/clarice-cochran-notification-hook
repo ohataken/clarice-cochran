@@ -2,5 +2,6 @@
 
 require "clarice_cochran"
 
-builder = ClariceCochran::NotificationHookCommandBuilder.new
+data = JSON.parse($stdin.read)
+builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
 system(builder.to_osascript)
