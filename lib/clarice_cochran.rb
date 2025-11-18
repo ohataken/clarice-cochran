@@ -2,6 +2,7 @@
 
 require "json"
 require_relative "clarice_cochran/version"
+require_relative "clarice_cochran/transcript_parser"
 require_relative "clarice_cochran/transcript_file_parser"
 require_relative "clarice_cochran/data_parsing_methods"
 require_relative "clarice_cochran/base_builder"

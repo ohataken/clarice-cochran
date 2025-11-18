@@ -13,5 +13,9 @@ module ClariceCochran
     def lines
       read.split("\n")
     end
+
+    def parse
+      @objects ||= lines.map { |l| TranscriptParser.new(JSON.parse(l)) }
+    end
   end
 end
