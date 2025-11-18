@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "clarice_cochran"
+
+system('osascript -e \'display notification "通知があります" with title "Claude Code" subtitle "お知らせ" sound name "Hero"\'')
