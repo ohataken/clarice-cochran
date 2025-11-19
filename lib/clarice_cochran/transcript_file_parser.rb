@@ -23,5 +23,9 @@ module ClariceCochran
         transcript.type_assistant? && transcript.message_contents.any?
       end
     end
+
+    def latest_assistant_transcript_with_message
+      assistant_transcripts_with_messages.max_by(&:timestamp)
+    end
   end
 end
