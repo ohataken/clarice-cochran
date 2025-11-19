@@ -17,5 +17,14 @@ module ClariceCochran
     def text
       @json["text"] || ""
     end
+
+    # @todo
+    def message
+      if type_tool_use?
+        "tool_use"
+      else
+        text
+      end
+    end
   end
 end
