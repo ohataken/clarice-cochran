@@ -21,6 +21,12 @@ class TestTranscriptParser < Minitest::Test
     assert(parser.message.key?("content"))
   end
 
+  def test_message_with_empty_value
+    json = JSON.parse("{}")
+    parser = ClariceCochran::TranscriptParser.new(json)
+    assert_equal({}, parser.message)
+  end
+
   def test_message_contents_with_empty_content
     json = JSON.parse('{ "message": { "content": [] } }')
     parser = ClariceCochran::TranscriptParser.new(json)

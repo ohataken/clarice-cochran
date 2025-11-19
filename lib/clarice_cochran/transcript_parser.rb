@@ -11,7 +11,7 @@ module ClariceCochran
     end
 
     def message
-      @json["message"]
+      @json["message"] || {}
     end
 
     def message_contents
