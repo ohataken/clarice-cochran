@@ -2,6 +2,51 @@
 
 My favorite little set of Claude Code hooks.
 
+## .claude/settings.json
+
+```
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "RBENV_VERSION=3.4.7 rbenv exec clarice-cochran-session-start-hook"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "RBENV_VERSION=3.4.7 rbenv exec clarice-cochran-session-end-hook"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "RBENV_VERSION=3.4.7 rbenv exec clarice-cochran-notification-hook"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "RBENV_VERSION=3.4.7 rbenv exec clarice-cochran-stop-hook"
+          }
+        ]
+      }
+    ]
+```
+
 ## Installation
 
 TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
