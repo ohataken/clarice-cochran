@@ -14,6 +14,10 @@ module ClariceCochran
       @json["type"] == "user"
     end
 
+    def type_assistant?
+      @json["type"] == "assistant"
+    end
+
     def message
       @json["message"] || {}
     end

@@ -21,6 +21,12 @@ class TestTranscriptParser < Minitest::Test
     assert(parser.type_user?)
   end
 
+  def test_type_assistant?
+    json = JSON.parse('{ "type": "assistant" }')
+    parser = ClariceCochran::TranscriptParser.new(json)
+    assert(parser.type_assistant?)
+  end
+
   def test_message
     json = JSON.parse('{ "message": { "content": [] } }')
     parser = ClariceCochran::TranscriptParser.new(json)
