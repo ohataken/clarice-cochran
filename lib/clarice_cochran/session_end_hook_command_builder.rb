@@ -9,7 +9,7 @@ module ClariceCochran
     end
 
     def to_osascript
-      "osascript -e 'display notification \"#{message}\" with title \"Claude Code\" subtitle \"処理終了\" sound name \"Hero\"'"
+      "osascript -e 'display notification \"#{message}\" with title \"Claude Code\" subtitle \"処理終了\" sound name \"Tink\"'"
     end
   end
 end
