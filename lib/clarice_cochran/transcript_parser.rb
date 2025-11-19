@@ -15,7 +15,8 @@ module ClariceCochran
     end
 
     def message_contents
-      @json["message"]["content"] || []
+      return [] unless message["content"].is_a?(Array)
+      @message_contents ||= message["content"].map { |c| TranscriptMessageContentParser.new(c) }
     end
   end
 end

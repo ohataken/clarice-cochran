@@ -36,6 +36,8 @@ class TestTranscriptParser < Minitest::Test
   def test_message_contents_with_valid_content
     json = JSON.parse('{ "message": { "content": [{ "type": "text", "text": "hoge" }] } }')
     parser = ClariceCochran::TranscriptParser.new(json)
-    assert_equal([{"type" => "text", "text" => "hoge"}], parser.message_contents)
+    assert(parser.message_contents.is_a?(Array))
+    assert_equal(1, parser.message_contents.length)
+    assert(parser.message_contents.first.is_a?(ClariceCochran::TranscriptMessageContentParser))
   end
 end
