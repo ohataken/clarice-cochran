@@ -10,6 +10,10 @@ module ClariceCochran
       @timestamp ||= Time.new(@json["timestamp"] || 0)
     end
 
+    def type_user?
+      @json["type"] == "user"
+    end
+
     def message
       @json["message"] || {}
     end
