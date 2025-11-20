@@ -1,4 +1,4 @@
-name: RSpec tests
+name: rspec
 
 on:
   pull_request:
