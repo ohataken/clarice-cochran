@@ -1,6 +1,6 @@
 # clarice-cochran
 
-My favorite little set of Claude Code hooks.
+my favorite little set of Claude Code hooks.
 
 ## .claude/settings.json
 
