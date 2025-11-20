@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["11092425+ohataken@users.noreply.github.com"]
 
   spec.summary = "clarice-cochran"
-  spec.description = "clarice-cochran"
+  spec.description = "my favorite little set of Claude Code hooks"
   spec.homepage = "https://github.com/ohataken/clarice-cochran"
   spec.required_ruby_version = ">= 3.1.0"
 
