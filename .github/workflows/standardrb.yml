@@ -1,4 +1,4 @@
-name: StandardRB Check
+name: standardrb check
 
 on:
   pull_request:
