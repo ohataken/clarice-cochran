@@ -18,10 +18,14 @@ module ClariceCochran
       @json["text"] || ""
     end
 
+    def input
+      @json["input"] || {}
+    end
+
     # @todo
     def message
       if type_tool_use?
-        "tool_use"
+        input["description"] || ""
       else
         text
       end
