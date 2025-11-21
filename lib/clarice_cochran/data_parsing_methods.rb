@@ -18,6 +18,10 @@ module ClariceCochran
       @data["hook_event_name"] || ""
     end
 
+    def prompt
+      @data["prompt"] || ""
+    end
+
     def message
       @data["message"] || ""
     end
