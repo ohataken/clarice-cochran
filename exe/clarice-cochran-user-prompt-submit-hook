@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "clarice_cochran"
+
+data = JSON.parse($stdin.read)
+builder = ClariceCochran::UserPromptSubmitHookCommandBuilder.new(data)
+system(builder.to_osascript)
