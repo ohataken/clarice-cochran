@@ -26,4 +26,17 @@ RSpec.describe ClariceCochran::TranscriptMessageContentParser do
       expect(parser.text).to eq("Hello, world!")
     end
   end
+
+  describe "#message" do
+    context "type_tool_use?" do
+      it "returns the input description" do
+        json = {
+          "type" => "tool_use",
+          "input" => {"description" => "Tool used successfully."}
+        }
+        parser = ClariceCochran::TranscriptMessageContentParser.new(json)
+        expect(parser.message).to eq("Tool used successfully.")
+      end
+    end
+  end
 end
