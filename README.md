@@ -44,6 +44,16 @@ my favorite little set of Claude Code hooks.
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "RBENV_VERSION=3.4.7 rbenv exec clarice-cochran-user-prompt-submit-hook"
+          }
+        ]
+      }
     ]
 ```
 
