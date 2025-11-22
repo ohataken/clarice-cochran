@@ -33,5 +33,9 @@ module ClariceCochran
     def source
       @data["source"] || ""
     end
+
+    def reason
+      @data["reason"] || ""
+    end
   end
 end
