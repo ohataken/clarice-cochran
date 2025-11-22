@@ -29,5 +29,9 @@ module ClariceCochran
     def notification_type
       @data["notification_type"] || ""
     end
+
+    def source
+      @data["source"] || ""
+    end
   end
 end
