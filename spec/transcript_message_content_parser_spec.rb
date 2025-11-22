@@ -27,6 +27,14 @@ RSpec.describe ClariceCochran::TranscriptMessageContentParser do
     end
   end
 
+  describe "#type_tool_result?" do
+    it "returns true when type is tool_result" do
+      json = {"type" => "tool_result"}
+      parser = ClariceCochran::TranscriptMessageContentParser.new(json)
+      expect(parser.type_tool_result?).to be true
+    end
+  end
+
   describe "#text" do
     it "returns the text value" do
       json = {"text" => "Hello, world!"}
@@ -41,6 +49,17 @@ RSpec.describe ClariceCochran::TranscriptMessageContentParser do
         json = {
           "type" => "tool_use",
           "input" => {"description" => "Tool used successfully."}
+        }
+        parser = ClariceCochran::TranscriptMessageContentParser.new(json)
+        expect(parser.message).to eq("Tool used successfully.")
+      end
+    end
+
+    context "type_tool_result?" do
+      it "returns the content" do
+        json = {
+          "type" => "tool_result",
+          "content" => "Tool used successfully."
         }
         parser = ClariceCochran::TranscriptMessageContentParser.new(json)
         expect(parser.message).to eq("Tool used successfully.")

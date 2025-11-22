@@ -18,6 +18,10 @@ module ClariceCochran
       @json["type"] == "thinking"
     end
 
+    def type_tool_result?
+      @json["type"] == "tool_result"
+    end
+
     def text
       @json["text"] || ""
     end
@@ -30,12 +34,18 @@ module ClariceCochran
       @json["thinking"] || ""
     end
 
+    def content
+      @json["content"] || ""
+    end
+
     # @todo
     def message
       if type_tool_use?
         input["description"] || ""
       elsif type_thinking?
         thinking
+      elsif type_tool_result?
+        content
       else
         text
       end
