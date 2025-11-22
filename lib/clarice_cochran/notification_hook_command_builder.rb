@@ -17,7 +17,7 @@ module ClariceCochran
     end
 
     def to_osascript
-      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{hook_event_name} - Claude Code\" subtitle \"#{notification_type}\" sound name \"Tink\"'"
+      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{message} - Claude Code\" subtitle \"#{notification_type}\" sound name \"Tink\"'"
     end
 
     private
