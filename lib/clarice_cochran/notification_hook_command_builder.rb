@@ -8,6 +8,14 @@ module ClariceCochran
       @data = data
     end
 
+    def permission_prompt?
+      notification_type == "permission_prompt"
+    end
+
+    def idle_prompt?
+      notification_type == "idle_prompt"
+    end
+
     def to_osascript
       "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{hook_event_name} - Claude Code\" subtitle \"#{notification_type}\" sound name \"Tink\"'"
     end
