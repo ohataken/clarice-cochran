@@ -8,6 +8,22 @@ module ClariceCochran
       @json = json
     end
 
+    def type_tool_use?
+      @json["type"] == "tool_use"
+    end
+
+    def type_text?
+      @json["type"] == "text"
+    end
+
+    def type_thinking?
+      @json["type"] == "thinking"
+    end
+
+    def type_tool_result?
+      @json["type"] == "tool_result"
+    end
+
     # @todo
     def message
       if type_tool_use?
