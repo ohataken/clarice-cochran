@@ -14,12 +14,12 @@ module ClariceCochran
 
     private
 
-    def latest_transcript_with_message
-      transcript_file_parser.latest_assistant_transcript_with_message
+    def latest_transcript
+      transcript_file_parser.latest_assistant_transcript
     end
 
     def latest_message_content_text
-      transcript = latest_transcript_with_message
+      transcript = latest_transcript
       transcript.message_contents.last.message
     end
   end

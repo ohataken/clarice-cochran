@@ -18,14 +18,14 @@ module ClariceCochran
       @objects ||= lines.map { |l| TranscriptParser.new(JSON.parse(l)) }
     end
 
-    def assistant_transcripts_with_messages
+    def assistant_transcripts
       parse.filter do |transcript|
-        transcript.type_assistant? && transcript.message_contents.any?
+        transcript.type_assistant?
       end
     end
 
-    def latest_assistant_transcript_with_message
-      assistant_transcripts_with_messages.max_by(&:timestamp)
+    def latest_assistant_transcript
+      assistant_transcripts.max_by(&:timestamp)
     end
   end
 end
