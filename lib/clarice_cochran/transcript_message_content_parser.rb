@@ -41,7 +41,7 @@ module ClariceCochran
     # @todo
     def message
       if type_tool_use?
-        input["description"] || ""
+        input["description"] || input["plan"] || ""
       elsif type_thinking?
         thinking
       elsif type_tool_result?
