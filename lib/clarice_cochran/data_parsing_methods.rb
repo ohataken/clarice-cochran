@@ -41,5 +41,9 @@ module ClariceCochran
     def permission_mode
       @data["permission_mode"] || ""
     end
+
+    def stop_hook_active
+      @data["stop_hook_active"] || false
+    end
   end
 end
