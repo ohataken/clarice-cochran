@@ -19,6 +19,14 @@ RSpec.describe ClariceCochran::TranscriptMessageContentParser do
     end
   end
 
+  describe "#type_thinking?" do
+    it "returns true when type is thinking" do
+      json = {"type" => "thinking"}
+      parser = ClariceCochran::TranscriptMessageContentParser.new(json)
+      expect(parser.type_thinking?).to be true
+    end
+  end
+
   describe "#text" do
     it "returns the text value" do
       json = {"text" => "Hello, world!"}
