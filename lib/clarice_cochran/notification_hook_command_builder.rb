@@ -3,6 +3,7 @@
 module ClariceCochran
   class NotificationHookCommandBuilder < BaseBuilder
     include DataParsingMethods
+    include TranscriptFileParsingMethods
 
     def initialize(data)
       @data = data
@@ -18,17 +19,6 @@ module ClariceCochran
 
     def to_osascript
       "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{message}\" sound name \"Tink\"'"
-    end
-
-    private
-
-    def latest_transcript
-      transcript_file_parser.latest_assistant_transcript
-    end
-
-    def latest_message_content_text
-      transcript = latest_transcript
-      transcript.message_contents.last.message
     end
   end
 end
