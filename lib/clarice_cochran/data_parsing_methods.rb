@@ -37,5 +37,9 @@ module ClariceCochran
     def reason
       @data["reason"] || ""
     end
+
+    def permission_mode
+      @data["permission_mode"] || ""
+    end
   end
 end
