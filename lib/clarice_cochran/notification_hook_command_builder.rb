@@ -3,17 +3,10 @@
 module ClariceCochran
   class NotificationHookCommandBuilder < BaseBuilder
     include DataParsingMethods
+    include NotificationTypeMethods
 
     def initialize(data)
       @data = data
-    end
-
-    def permission_prompt?
-      notification_type == "permission_prompt"
-    end
-
-    def idle_prompt?
-      notification_type == "idle_prompt"
     end
 
     def to_osascript
