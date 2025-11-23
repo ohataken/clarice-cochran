@@ -3,25 +3,10 @@
 module ClariceCochran
   class TranscriptMessageContentParser
     include TranscriptMessageContentParsingMethods
+    include TranscriptMessageContentTypeMethods
 
     def initialize(json)
       @json = json
-    end
-
-    def type_tool_use?
-      type == "tool_use"
-    end
-
-    def type_text?
-      type == "text"
-    end
-
-    def type_thinking?
-      type == "thinking"
-    end
-
-    def type_tool_result?
-      type == "tool_result"
     end
 
     # @todo
