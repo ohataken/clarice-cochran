@@ -36,5 +36,9 @@ module ClariceCochran
         text
       end
     end
+
+    def shell_safe_message
+      message.gsub("\"", "\\\"")
+    end
   end
 end

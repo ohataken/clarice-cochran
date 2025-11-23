@@ -20,7 +20,7 @@ module ClariceCochran
 
     def latest_message_content_text
       transcript = latest_transcript
-      transcript.message_contents.last.message
+      transcript.message_contents.last.shell_safe_message
     end
   end
 end
