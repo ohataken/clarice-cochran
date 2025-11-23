@@ -2,20 +2,14 @@
 
 module ClariceCochran
   class TranscriptParser
+    include TranscriptTypeMethods
+
     def initialize(json)
       @json = json
     end
 
     def timestamp
       @timestamp ||= Time.new(@json["timestamp"] || 0)
-    end
-
-    def type_user?
-      @json["type"] == "user"
-    end
-
-    def type_assistant?
-      @json["type"] == "assistant"
     end
 
     def message
