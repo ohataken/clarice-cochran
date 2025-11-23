@@ -3,11 +3,11 @@
 module ClariceCochran
   module TranscriptTypeMethods
     def type_user?
-      @json["type"] == "user"
+      @data["type"] == "user"
     end
 
     def type_assistant?
-      @json["type"] == "assistant"
+      @data["type"] == "assistant"
     end
   end
 end

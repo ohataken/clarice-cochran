@@ -5,15 +5,15 @@ module ClariceCochran
     include TranscriptTypeMethods
 
     def initialize(json)
-      @json = json
+      @data = json
     end
 
     def timestamp
-      @timestamp ||= Time.new(@json["timestamp"] || 0)
+      @timestamp ||= Time.new(@data["timestamp"] || 0)
     end
 
     def message
-      @json["message"] || {}
+      @data["message"] || {}
     end
 
     def message_contents
