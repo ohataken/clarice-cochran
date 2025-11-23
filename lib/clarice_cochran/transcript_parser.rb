@@ -4,16 +4,16 @@ module ClariceCochran
   class TranscriptParser
     include TranscriptTypeMethods
 
-    def initialize(json)
-      @json = json
+    def initialize(data)
+      @data = data
     end
 
     def timestamp
-      @timestamp ||= Time.new(@json["timestamp"] || 0)
+      @timestamp ||= Time.new(@data["timestamp"] || 0)
     end
 
     def message
-      @json["message"] || {}
+      @data["message"] || {}
     end
 
     def message_contents
