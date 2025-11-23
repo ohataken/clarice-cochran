@@ -3,6 +3,7 @@
 require "json"
 require "pathname"
 require_relative "clarice_cochran/version"
+require_relative "clarice_cochran/transcript_message_content_parsing_methods"
 require_relative "clarice_cochran/transcript_message_content_parser"
 require_relative "clarice_cochran/transcript_parser"
 require_relative "clarice_cochran/transcript_file_parser"
