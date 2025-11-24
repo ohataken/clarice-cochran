@@ -12,4 +12,6 @@ gem "rspec", "~> 3.13"
 
 gem "standard", "~> 1.52"
 
-gem "yard", "~> 0.9"
+group :development do
+  gem "yard", "~> 0.9"
+end
