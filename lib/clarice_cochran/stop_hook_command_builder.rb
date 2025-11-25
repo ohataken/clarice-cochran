@@ -3,13 +3,18 @@
 module ClariceCochran
   class StopHookCommandBuilder < BaseBuilder
     include DataParsingMethods
+    include SoundNameOptions
 
     def initialize(data)
       @data = data
     end
 
+    def oascript_sound_name_option
+      sound_name(:tink) && "sound name \"#{sound_name(:tink)}\""
+    end
+
     def to_osascript
-      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"Claude - #{hook_event_name}\" sound name \"Tink\"'"
+      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"Claude - #{hook_event_name}\" #{oascript_sound_name_option}'"
     end
 
     private

@@ -4,13 +4,18 @@ module ClariceCochran
   class NotificationHookCommandBuilder < BaseBuilder
     include DataParsingMethods
     include NotificationTypeMethods
+    include SoundNameOptions
 
     def initialize(data)
       @data = data
     end
 
+    def oascript_sound_name_option
+      sound_name(:tink) && "sound name \"#{sound_name(:tink)}\""
+    end
+
     def to_osascript
-      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{message}\" sound name \"Tink\"'"
+      "osascript -e 'display notification \"#{latest_message_content_text}\" with title \"#{message}\" #{oascript_sound_name_option}'"
     end
 
     private
