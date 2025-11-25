@@ -11,3 +11,7 @@ gem "rake", "~> 13.0"
 gem "rspec", "~> 3.13"
 
 gem "standard", "~> 1.52"
+
+group :development do
+  gem "yard", "~> 0.9"
+end
