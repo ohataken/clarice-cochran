@@ -12,6 +12,10 @@ gem "rspec", "~> 3.13"
 
 gem "standard", "~> 1.52"
 
+group :development, :test do
+  gem "simplecov", "~> 0.22"
+end
+
 group :development do
   gem "yard", "~> 0.9"
 end
