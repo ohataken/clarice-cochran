@@ -10,7 +10,7 @@ module ClariceCochran
     end
 
     def oascript_sound_name_option
-      sound_name(:tink) && "sound name \"#{sound_name(:tink)}\""
+      nil
     end
 
     def to_osascript
