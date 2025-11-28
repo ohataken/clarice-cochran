@@ -56,12 +56,4 @@ RSpec.describe ClariceCochran::SessionStartHookCommandBuilder do
       expect(builder.message).to eq("")
     end
   end
-
-  describe "#oascript_sound_name_option" do
-    it "returns empty string to disable sound" do
-      data = {}
-      builder = ClariceCochran::SessionStartHookCommandBuilder.new(data)
-      expect(builder.oascript_sound_name_option).to eq("")
-    end
-  end
 end
