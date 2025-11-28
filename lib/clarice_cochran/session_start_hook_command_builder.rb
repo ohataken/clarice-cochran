@@ -10,7 +10,7 @@ module ClariceCochran
     end
 
     def oascript_sound_name_option
-      nil
+      ""
     end
 
     def to_osascript

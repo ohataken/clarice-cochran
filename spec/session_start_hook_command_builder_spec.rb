@@ -58,10 +58,10 @@ RSpec.describe ClariceCochran::SessionStartHookCommandBuilder do
   end
 
   describe "#oascript_sound_name_option" do
-    it "returns nil to disable sound" do
+    it "returns empty string to disable sound" do
       data = {}
       builder = ClariceCochran::SessionStartHookCommandBuilder.new(data)
-      expect(builder.oascript_sound_name_option).to be_nil
+      expect(builder.oascript_sound_name_option).to eq("")
     end
   end
 end
