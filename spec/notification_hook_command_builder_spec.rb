@@ -96,4 +96,79 @@ RSpec.describe ClariceCochran::NotificationHookCommandBuilder do
       expect(builder.idle_prompt?).to be false
     end
   end
+
+  describe "#sound_name_for_message_content" do
+    it "returns :tink when latest_message_content is nil" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      allow(builder).to receive(:latest_message_content).and_return(nil)
+      expect(builder.sound_name_for_message_content).to eq(:tink)
+    end
+
+    it "returns :bottle when type_tool_use? is true" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "tool_use"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.sound_name_for_message_content).to eq(:bottle)
+    end
+
+    it "returns :tink when type_text? is true" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "text"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.sound_name_for_message_content).to eq(:tink)
+    end
+
+    it "returns :tink when type_thinking? is true" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "thinking"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.sound_name_for_message_content).to eq(:tink)
+    end
+
+    it "returns :hero when type_tool_result? is true" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "tool_result"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.sound_name_for_message_content).to eq(:hero)
+    end
+  end
+
+  describe "#oascript_sound_name_option" do
+    it "returns sound name option with Bottle when type_tool_use?" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "tool_use"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.oascript_sound_name_option).to eq('sound name "Bottle"')
+    end
+
+    it "returns sound name option with Tink when type_text?" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "text"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.oascript_sound_name_option).to eq('sound name "Tink"')
+    end
+
+    it "returns sound name option with Tink when type_thinking?" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "thinking"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.oascript_sound_name_option).to eq('sound name "Tink"')
+    end
+
+    it "returns sound name option with Hero when type_tool_result?" do
+      data = {}
+      builder = ClariceCochran::NotificationHookCommandBuilder.new(data)
+      content = ClariceCochran::TranscriptMessageContentParser.new({"type" => "tool_result"})
+      allow(builder).to receive(:latest_message_content).and_return(content)
+      expect(builder.oascript_sound_name_option).to eq('sound name "Hero"')
+    end
+  end
 end

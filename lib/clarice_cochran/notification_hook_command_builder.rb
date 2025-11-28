@@ -11,7 +11,24 @@ module ClariceCochran
     end
 
     def oascript_sound_name_option
-      sound_name(:tink) && "sound name \"#{sound_name(:tink)}\""
+      sound_name(sound_name_for_message_content) && "sound name \"#{sound_name(sound_name_for_message_content)}\""
+    end
+
+    def sound_name_for_message_content
+      content = latest_message_content
+      return :tink if content.nil?
+
+      if content.type_tool_use?
+        :bottle
+      elsif content.type_tool_result?
+        :hero
+      else
+        :tink
+      end
+    end
+
+    def latest_message_content
+      latest_transcript&.message_contents&.last
     end
 
     def to_osascript
