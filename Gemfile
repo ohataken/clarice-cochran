@@ -10,7 +10,7 @@ gem "rake", "~> 13.0"
 
 gem "rspec", "~> 3.13"
 
-gem "standard", "~> 1.52"
+gem "standard", "~> 1.53"
 
 group :development, :test do
   gem "simplecov", "~> 0.22"
